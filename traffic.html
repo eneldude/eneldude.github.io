@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Live Traffic Data - San Carlos, CA</title>
+<style>
+    #map {
+      height: 100vh;
+    }
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+ 
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap" async defer></script>
+<script>
+    function initMap() {
+      // Set the center coordinates for San Carlos, CA
+      var sanCarlos = { lat: 37.539265, lng: -122.0508563 };
+
+ 
+
+      // Create a new map instance
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: sanCarlos,
+        zoom: 11
+      });
+
+ 
+      // Create a traffic layer to display live traffic data
+      var trafficLayer = new google.maps.TrafficLayer();
+      trafficLayer.setMap(map);
+    }
+</script>
+</body>
+</html>
